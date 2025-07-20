@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free online Smart Resume & Cover Letter Generator tool. Create professional resumes and tailored cover letters in minutes.">
+    <meta name="keywords" content="resume builder, cover letter generator, cv creator, job application tool, professional resume">
+    <meta name="author" content="Smart Resume Tools">
+    <meta property="og:title" content="Smart Resume & Cover Letter Generator">
+    <meta property="og:description" content="Create professional resumes and cover letters for free">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com">
+    <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXXX">
+    <title>Smart Resume & Cover Letter Generator | Free Online Tool</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f7fa;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        header {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: var(--box-shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: white;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+            margin-left: 1rem;
+        }
+
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--secondary-color);
+        }
+
+        .main-content {
+            padding: 3rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-family: 'Poppins', sans-serif;
+            color: var(--secondary-color);
+        }
+
+        .tool-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .form-section, .preview-section {
+            flex: 1;
+            min-width: 300px;
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            box-shadow: var(--box-shadow);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+        }
+
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+        }
+
+        .radio-option input {
+            margin-right: 0.5rem;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .checkbox-option {
+            display: flex;
+            align-items: center;
+        }
+
+        .checkbox-option input {
+            margin-right: 0.5rem;
+        }
+
+        .preview-section {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .preview-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .template-selector {
+            padding: 0.5rem;
+            border-radius: var(--border-radius);
+            border: 1px solid #ddd;
+        }
+
+        .preview-content {
+            flex: 1;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            background-color: #f9f9f9;
+            overflow-y: auto;
+            max-height: 600px;
+        }
+
+        .resume-template {
+            font-family: 'Times New Roman', Times, serif;
+            color: #333;
+        }
+
+        .resume-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .resume-header h2 {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .resume-header p {
+            color: #666;
+        }
+
+        .resume-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .resume-section h3 {
+            color: var(--primary-color);
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .resume-item {
+            margin-bottom: 1rem;
+        }
+
+        .resume-item-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.3rem;
+        }
+
+        .resume-item h4 {
+            font-weight: 600;
+        }
+
+        .resume-item .date {
+            color: #666;
+            font-style: italic;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .btn-download {
+            background-color: var(--success-color);
+        }
+
+        .btn-download:hover {
+            background-color: #219653;
+        }
+
+        .btn-reset {
+            background-color: var(--warning-color);
+        }
+
+        .btn-reset:hover {
+            background-color: #d68910;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .feature-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+
+        .ad-container {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 1rem;
+            margin: 2rem 0;
+            text-align: center;
+            box-shadow: var(--box-shadow);
+        }
+
+        .ad-placeholder {
+            background-color: #f0f0f0;
+            padding: 2rem;
+            border: 1px dashed #ccc;
+            color: #666;
+        }
+
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            text-align: left;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1rem;
+            font-size: 0.9rem;
+            color: #ddd;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                margin-top: 1rem;
+                justify-content: center;
+            }
+
+            nav ul li {
+                margin: 0 0.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .btn {
+                display: block;
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+
+            .btn-outline {
+                margin-left: 0;
+            }
+
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .tool-container {
+                flex-direction: column;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            .action-buttons .btn {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                width: 100%;
+            }
+
+            nav.active {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+                margin-top: 1rem;
+            }
+
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+
+            .hero {
+                padding: 2rem 0;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <a href="#" class="logo">Smart<span>Resume</span></a>
+            <button class="mobile-menu-btn">☰</button>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="#resume-builder">Resume Builder</a></li>
+                    <li><a href="#cover-letter">Cover Letter</a></li>
+                    <li><a href="#templates">Templates</a></li>
+                    <li><a href="#tips">Tips</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Create Your Perfect Resume & Cover Letter</h1>
+            <p>Our smart generator helps you craft professional, tailored resumes and cover letters that stand out to employers. Get started in minutes!</p>
+            <a href="#resume-builder" class="btn">Build My Resume</a>
+            <a href="#cover-letter" class="btn btn-outline">Create Cover Letter</a>
+        </div>
+    </section>
+
+    <div class="ad-container">
+        <div class="ad-placeholder">
+            <!-- Google AdSense Ad Unit -->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+                    crossorigin="anonymous"></script>
+            <!-- Responsive Ad Unit -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                 data-ad-slot="XXXXXXXXXX"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <section id="resume-builder">
+            <div class="container">
+                <h2 class="section-title">Smart Resume Builder</h2>
+                <div class="tool-container">
+                    <div class="form-section">
+                        <form id="resume-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="first-name">First Name</label>
+                                    <input type="text" id="first-name" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="last-name">Last Name</label>
+                                    <input type="text" id="last-name" class="form-control" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="profession">Profession/Title</label>
+                                <input type="text" id="profession" class="form-control" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" class="form-control" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="tel" id="phone" class="form-control" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="address">Address</label>
+                                <textarea id="address" class="form-control" rows="2"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="summary">Professional Summary</label>
+                                <textarea id="summary" class="form-control" rows="4" required></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Work Experience</label>
+                                <div id="experience-fields">
+                                    <div class="experience-item">
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label for="job-title-1">Job Title</label>
+                                                <input type="text" id="job-title-1" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="company-1">Company</label>
+                                                <input type="text" id="company-1" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label for="start-date-1">Start Date</label>
+                                                <input type="month" id="start-date-1" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="end-date-1">End Date</label>
+                                                <input type="month" id="end-date-1" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="job-description-1">Description</label>
+                                            <textarea id="job-description-1" class="form-control" rows="3"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" id="add-experience" class="btn" style="background-color: var(--primary-color); margin-top: 0.5rem;">Add Another Position</button>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Education</label>
+                                <div id="education-fields">
+                                    <div class="education-item">
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label for="degree-1">Degree</label>
+                                                <input type="text" id="degree-1" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="institution-1">Institution</label>
+                                                <input type="text" id="institution-1" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label for="education-start-1">Start Date</label>
+                                                <input type="month" id="education-start-1" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="education-end-1">End Date</label>
+                                                <input type="month" id="education-end-1" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" id="add-education" class="btn" style="background-color: var(--primary-color); margin-top: 0.5rem;">Add Another Education</button>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="skills">Skills (comma separated)</label>
+                                <textarea id="skills" class="form-control" rows="3" placeholder="e.g., Project Management, JavaScript, Public Speaking"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="certifications">Certifications</label>
+                                <textarea id="certifications" class="form-control" rows="3" placeholder="List any relevant certifications"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="languages">Languages</label>
+                                <textarea id="languages" class="form-control" rows="2" placeholder="e.g., English (Fluent), Spanish (Intermediate)"></textarea>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="preview-section">
+                        <div class="preview-header">
+                            <h3>Resume Preview</h3>
+                            <select id="template-selector" class="template-selector">
+                                <option value="classic">Classic</option>
+                                <option value="modern">Modern</option>
+                                <option value="creative">Creative</option>
+                                <option value="minimalist">Minimalist</option>
+                            </select>
+                        </div>
+                        <div class="preview-content">
+                            <div id="resume-preview" class="resume-template">
+                                <div class="resume-header">
+                                    <h2 id="preview-name">Your Name</h2>
+                                    <p id="preview-profession">Your Profession</p>
+                                    <p id="preview-contact">email@example.com | (123) 456-7890 | Your Address</p>
+                                </div>
+
+                                <div class="resume-section">
+                                    <h3>Professional Summary</h3>
+                                    <p id="preview-summary">Experienced professional with a proven track record in [your field]. Skilled in [key skills] with [number] years of experience. Adept at [key responsibilities] with a passion for [relevant interest].</p>
+                                </div>
+
+                                <div class="resume-section">
+                                    <h3>Work Experience</h3>
+                                    <div id="preview-experience">
+                                        <div class="resume-item">
+                                            <div class="resume-item-header">
+                                                <h4>Job Title</h4>
+                                                <span class="date">Start Date - End Date</span>
+                                            </div>
+                                            <p><em>Company Name</em></p>
+                                            <ul>
+                                                <li>Job description and key achievements</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="resume-section">
+                                    <h3>Education</h3>
+                                    <div id="preview-education">
+                                        <div class="resume-item">
+                                            <div class="resume-item-header">
+                                                <h4>Degree</h4>
+                                                <span class="date">Start Date - End Date</span>
+                                            </div>
+                                            <p><em>Institution Name</em></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="resume-section">
+                                    <h3>Skills</h3>
+                                    <ul id="preview-skills">
+                                        <li>Skill 1, Skill 2, Skill 3</li>
+                                    </ul>
+                                </div>
+
+                                <div class="resume-section">
+                                    <h3>Certifications</h3>
+                                    <ul id="preview-certifications">
+                                        <li>Certification 1</li>
+                                        <li>Certification 2</li>
+                                    </ul>
+                                </div>
+
+                                <div class="resume-section">
+                                    <h3>Languages</h3>
+                                    <ul id="preview-languages">
+                                        <li>Language 1 (Proficiency)</li>
+                                        <li>Language 2 (Proficiency)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="download-resume" class="btn btn-download">Download Resume (PDF)</button>
+                    <button id="reset-form" class="btn btn-reset">Reset Form</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="ad-container">
+            <div class="ad-placeholder">
+                <!-- Google AdSense Ad Unit -->
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+                        crossorigin="anonymous"></script>
+                <!-- Responsive Ad Unit -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                     data-ad-slot="XXXXXXXXXX"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </div>
+
+        <section id="cover-letter">
+            <div class="container">
+                <h2 class="section-title">Smart Cover Letter Generator</h2>
+                <div class="tool-container">
+                    <div class="form-section">
+                        <form id="cover-letter-form">
+                            <div class="form-group">
+                                <label for="cl-job-title">Job Title You're Applying For</label>
+                                <input type="text" id="cl-job-title" class="form-control" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cl-company">Company Name</label>
+                                <input type="text" id="cl-company" class="form-control" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cl-hiring-manager">Hiring Manager's Name (if known)</label>
+                                <input type="text" id="cl-hiring-manager" class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cl-intro">Introduction Paragraph</label>
+                                <textarea id="cl-intro" class="form-control" rows="3" placeholder="Briefly introduce yourself and express your interest in the position"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cl-body">Body Paragraph(s)</label>
+                                <textarea id="cl-body" class="form-control" rows="6" placeholder="Highlight your relevant skills, experiences, and achievements that make you a strong candidate"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cl-closing">Closing Paragraph</label>
+                                <textarea id="cl-closing" class="form-control" rows="3" placeholder="Express your enthusiasm for the opportunity, mention follow-up, and thank the reader"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cl-signature">Signature</label>
+                                <input type="text" id="cl-signature" class="form-control" value="Sincerely,">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cl-your-name">Your Name</label>
+                                <input type="text" id="cl-your-name" class="form-control" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cl-contact-info">Contact Information</label>
+                                <textarea id="cl-contact-info" class="form-control" rows="2" placeholder="Phone number, email, LinkedIn profile, etc."></textarea>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="preview-section">
+                        <div class="preview-header">
+                            <h3>Cover Letter Preview</h3>
+                            <select id="cl-template-selector" class="template-selector">
+                                <option value="formal">Formal</option>
+                                <option value="modern">Modern</option>
+                                <option value="creative">Creative</option>
+                            </select>
+                        </div>
+                        <div class="preview-content">
+                            <div id="cover-letter-preview" class="resume-template">
+                                <p id="cl-preview-date">[Today's Date]</p>
+                                <p id="cl-preview-hiring-manager">Hiring Manager's Name</p>
+                                <p id="cl-preview-company">Company Name</p>
+                                <p id="cl-preview-address">Company Address</p>
+                                <br>
+                                <p id="cl-preview-salutation">Dear Hiring Manager,</p>
+                                <div id="cl-preview-content">
+                                    <p id="cl-preview-intro">[Introduction paragraph expressing your interest in the position and briefly introducing yourself.]</p>
+                                    <p id="cl-preview-body">[Body paragraph(s) highlighting your relevant skills, experiences, and achievements that make you a strong candidate for the position.]</p>
+                                    <p id="cl-preview-closing">[Closing paragraph expressing your enthusiasm for the opportunity, mentioning follow-up, and thanking the reader for their time and consideration.]</p>
+                                </div>
+                                <br>
+                                <p id="cl-preview-signature">Sincerely,</p>
+                                <p id="cl-preview-your-name">Your Name</p>
+                                <p id="cl-preview-contact-info">Your Contact Information</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="download-cover-letter" class="btn btn-download">Download Cover Letter (PDF)</button>
+                    <button id="reset-cl-form" class="btn btn-reset">Reset Form</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="ad-container">
+            <div class="ad-placeholder">
+                <!-- Google AdSense Ad Unit -->
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+                        crossorigin="anonymous"></script>
+                <!-- Responsive Ad Unit -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                     data-ad-slot="XXXXXXXXXX"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </div>
+
+        <section id="templates" class="section-with-ad">
+            <div class="container">
+                <h2 class="section-title">Professional Templates</h2>
+                <p class="section-subtitle">Choose from our collection of professionally designed templates to make your resume stand out</p>
+                
+                <div class="features">
+                    <div class="feature-card">
+                        <div class="feature-icon">📄</div>
+                        <h3>Classic</h3>
+                        <p>Timeless design that works for all industries and experience levels</p>
+                        <button class="btn" style="margin-top: 1rem;">Preview</button>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">✨</div>
+                        <h3>Modern</h3>
+                        <p>Clean, contemporary layout perfect for tech and creative fields</p>
+                        <button class="btn" style="margin-top: 1rem;">Preview</button>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎨</div>
+                        <h3>Creative</h3>
+                        <p>Unique designs for designers, artists, and other creative professionals</p>
+                        <button class="btn" style="margin-top: 1rem;">Preview</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tips">
+            <div class="container">
+                <h2 class="section-title">Resume & Cover Letter Tips</h2>
+                <div class="form-section">
+                    <h3>Resume Writing Tips</h3>
+                    <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+                        <li>Tailor your resume to each job application</li>
+                        <li>Use action verbs and quantify achievements</li>
+                        <li>Keep it concise (1-2 pages maximum)</li>
+                        <li>Highlight relevant skills and experiences</li>
+                        <li>Proofread carefully for errors</li>
+                    </ul>
+
+                    <h3>Cover Letter Tips</h3>
+                    <ul style="margin-left: 1.5rem;">
+                        <li>Address the hiring manager by name if possible</li>
+                        <li>Mention the specific position you're applying for</li>
+                        <li>Explain why you're interested in the company</li>
+                        <li>Highlight 2-3 key qualifications</li>
+                        <li>Keep it to one page</li>
+                        <li>End with a call to action</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Smart Resume</h3>
+                    <p>Creating professional resumes and cover letters since 2023. Our mission is to help job seekers present their best selves to employers.</p>
+                    <div class="social-links">
+                        <a href="#"><span>FB</span></a>
+                        <a href="#"><span>TW</span></a>
+                        <a href="#"><span>IG</span></a>
+                        <a href="#"><span>LI</span></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#resume-builder">Resume Builder</a></li>
+                        <li><a href="#cover-letter">Cover Letter Generator</a></li>
+                        <li><a href="#templates">Templates</a></li>
+                        <li><a href="#tips">Writing Tips</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Job Search Strategies</a></li>
+                        <li><a href="#">Interview Preparation</a></li>
+                        <li><a href="#">Career Advice</a></li>
+                        <li><a href="#">Salary Negotiation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section" id="contact">
+                    <h3>Contact Us</h3>
+                    <p>Email: info@smartresume.com</p>
+                    <p>Phone: (123) 456-7890</p>
+                    <p>Address: 123 Resume Street, Career City</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Smart Resume. All rights reserved. | <a href="#" style="color: #ddd;">Privacy Policy</a> | <a href="#" style="color: #ddd;">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.getElementById('main-nav').classList.toggle('active');
+        });
+
+        // Form to Preview Updates - Resume
+        const resumeForm = document.getElementById('resume-form');
+        const previewFields = {
+            name: ['first-name', 'last-name'],
+            profession: ['profession'],
+            contact: ['email', 'phone', 'address'],
+            summary: ['summary'],
+            skills: ['skills'],
+            certifications: ['certifications'],
+            languages: ['languages']
+        };
+
+        // Update preview when form changes
+        resumeForm.addEventListener('input', function(e) {
+            updateResumePreview();
+        });
+
+        function updateResumePreview() {
+            // Update name
+            const firstName = document.getElementById('first-name').value || 'Your';
+            const lastName = document.getElementById('last-name').value || 'Name';
+            document.getElementById('preview-name').textContent = `${firstName} ${lastName}`;
+
+            // Update profession
+            document.getElementById('preview-profession').textContent = 
+                document.getElementById('profession').value || 'Your Profession';
+
+            // Update contact info
+            const email = document.getElementById('email').value || 'email@example.com';
+            const phone = document.getElementById('phone').value || '(123) 456-7890';
+            const address = document.getElementById('address').value || 'Your Address';
+            document.getElementById('preview-contact').textContent = `${email} | ${phone} | ${address}`;
+
+            // Update summary
+            document.getElementById('preview-summary').textContent = 
+                document.getElementById('summary').value || 'Experienced professional with a proven track record in [your field]. Skilled in [key skills] with [number] years of experience. Adept at [key responsibilities] with a passion for [relevant interest].';
+
+            // Update skills
+            const skills = document.getElementById('skills').value || 'Skill 1, Skill 2, Skill 3';
+            document.getElementById('preview-skills').innerHTML = skills.split(',').map(skill => `<li>${skill.trim()}</li>`).join('');
+
+            // Update certifications
+            const certs = document.getElementById('certifications').value || 'Certification 1\nCertification 2';
+            document.getElementById('preview-certifications').innerHTML = certs.split('\n').filter(c => c.trim()).map(cert => `<li>${cert.trim()}</li>`).join('');
+
+            // Update languages
+            const langs = document.getElementById('languages').value || 'Language 1 (Proficiency)\nLanguage 2 (Proficiency)';
+            document.getElementById('preview-languages').innerHTML = langs.split('\n').filter(l => l.trim()).map(lang => `<li>${lang.trim()}</li>`).join('');
+
+            // Update experience (simplified for this example)
+            // In a full implementation, you would dynamically add/remove experience items
+            const jobTitle = document.getElementById('job-title-1').value || 'Job Title';
+            const company = document.getElementById('company-1').value || 'Company Name';
+            const startDate = document.getElementById('start-date-1').value || 'Start Date';
+            const endDate = document.getElementById('end-date-1').value || 'End Date';
+            const jobDesc = document.getElementById('job-description-1').value || 'Job description and key achievements';
+
+            document.getElementById('preview-experience').innerHTML = `
+                <div class="resume-item">
+                    <div class="resume-item-header">
+                        <h4>${jobTitle}</h4>
+                        <span class="date">${formatDate(startDate)} - ${formatDate(endDate)}</span>
+                    </div>
+                    <p><em>${company}</em></p>
+                    <ul>
+                        ${jobDesc.split('\n').filter(item => item.trim()).map(item => `<li>${item.trim()}</li>`).join('')}
+                    </ul>
+                </div>
+            `;
+
+            // Update education
+            const degree = document.getElementById('degree-1').value || 'Degree';
+            const institution = document.getElementById('institution-1').value || 'Institution Name';
+            const eduStart = document.getElementById('education-start-1').value || 'Start Date';
+            const eduEnd = document.getElementById('education-end-1').value || 'End Date';
+
+            document.getElementById('preview-education').innerHTML = `
+                <div class="resume-item">
+                    <div class="resume-item-header">
+                        <h4>${degree}</h4>
+                        <span class="date">${formatDate(eduStart)} - ${formatDate(eduEnd)}</span>
+                    </div>
+                    <p><em>${institution}</em></p>
+                </div>
+            `;
+        }
+
+        function formatDate(dateString) {
+            if (!dateString) return 'Present';
+            const date = new Date(dateString);
+            if (isNaN(date.getTime())) return dateString;
+            return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short' });
+        }
+
+        // Add more experience fields
+        let experienceCount = 1;
+        document.getElementById('add-experience').addEventListener('click', function() {
+            experienceCount++;
+            const newExperience = document.createElement('div');
+            newExperience.className = 'experience-item';
+            newExperience.innerHTML = `
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="job-title-${experienceCount}">Job Title</label>
+                        <input type="text" id="job-title-${experienceCount}" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="company-${experienceCount}">Company</label>
+                        <input type="text" id="company-${experienceCount}" class="form-control">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="start-date-${experienceCount}">Start Date</label>
+                        <input type="month" id="start-date-${experienceCount}" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="end-date-${experienceCount}">End Date</label>
+                        <input type="month" id="end-date-${experienceCount}" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="job-description-${experienceCount}">Description</label>
+                    <textarea id="job-description-${experienceCount}" class="form-control" rows="3"></textarea>
+                </div>
+                <button type="button" class="btn btn-remove" style="background-color: var(--accent-color);">Remove This Position</button>
+            `;
+            document.getElementById('experience-fields').appendChild(newExperience);
+            
+            // Add event listener to the new remove button
+            newExperience.querySelector('.btn-remove').addEventListener('click', function() {
+                newExperience.remove();
+            });
+        });
+
+        // Add more education fields
+        let educationCount = 1;
+        document.getElementById('add-education').addEventListener('click', function() {
+            educationCount++;
+            const newEducation = document.createElement('div');
+            newEducation.className = 'education-item';
+            newEducation.innerHTML = `
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="degree-${educationCount}">Degree</label>
+                        <input type="text" id="degree-${educationCount}" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="institution-${educationCount}">Institution</label>
+                        <input type="text" id="institution-${educationCount}" class="form-control">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="education-start-${educationCount}">Start Date</label>
+                        <input type="month" id="education-start-${educationCount}" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="education-end-${educationCount}">End Date</label>
+                        <input type="month" id="education-end-${educationCount}" class="form-control">
+                    </div>
+                </div>
+                <button type="button" class="btn btn-remove" style="background-color: var(--accent-color);">Remove This Education</button>
+            `;
+            document.getElementById('education-fields').appendChild(newEducation);
+            
+            // Add event listener to the new remove button
+            newEducation.querySelector('.btn-remove').addEventListener('click', function() {
+                newEducation.remove();
+            });
+        });
+
+        // Reset resume form
+        document.getElementById('reset-form').addEventListener('click', function() {
+            if (confirm('Are you sure you want to reset all resume information?')) {
+                resumeForm.reset();
+                updateResumePreview();
+            }
+        });
+
+        // Cover Letter Form Updates
+        const coverLetterForm = document.getElementById('cover-letter-form');
+        coverLetterForm.addEventListener('input', function() {
+            updateCoverLetterPreview();
+        });
+
+        function updateCoverLetterPreview() {
+            // Update date
+            const today = new Date();
+            document.getElementById('cl-preview-date').textContent = today.toLocaleDateString('en-US', { 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            });
+
+            // Update hiring manager
+            const hiringManager = document.getElementById('cl-hiring-manager').value || 'Hiring Manager';
+            document.getElementById('cl-preview-hiring-manager').textContent = hiringManager;
+
+            // Update company info
+            const company = document.getElementById('cl-company').value || 'Company Name';
+            document.getElementById('cl-preview-company').textContent = company;
+            document.getElementById('cl-preview-address').textContent = 'Company Address';
+
+            // Update salutation
+            document.getElementById('cl-preview-salutation').textContent = 
+                hiringManager ? `Dear ${hiringManager},` : 'Dear Hiring Manager,';
+
+            // Update content
+            document.getElementById('cl-preview-intro').textContent = 
+                document.getElementById('cl-intro').value || '[Introduction paragraph expressing your interest in the position and briefly introducing yourself.]';
+
+            document.getElementById('cl-preview-body').textContent = 
+                document.getElementById('cl-body').value || '[Body paragraph(s) highlighting your relevant skills, experiences, and achievements that make you a strong candidate for the position.]';
+
+            document.getElementById('cl-preview-closing').textContent = 
+                document.getElementById('cl-closing').value || '[Closing paragraph expressing your enthusiasm for the opportunity, mentioning follow-up, and thanking the reader for their time and consideration.]';
+
+            // Update signature
+            document.getElementById('cl-preview-signature').textContent = 
+                document.getElementById('cl-signature').value || 'Sincerely,';
+
+            document.getElementById('cl-preview-your-name').textContent = 
+                document.getElementById('cl-your-name').value || 'Your Name';
+
+            document.getElementById('cl-preview-contact-info').textContent = 
+                document.getElementById('cl-contact-info').value || 'Your Contact Information';
+        }
+
+        // Reset cover letter form
+        document.getElementById('reset-cl-form').addEventListener('click', function() {
+            if (confirm('Are you sure you want to reset all cover letter information?')) {
+                coverLetterForm.reset();
+                updateCoverLetterPreview();
+            }
+        });
+
+        // Template selector - this would change styles in a full implementation
+        document.getElementById('template-selector').addEventListener('change', function() {
+            // In a full implementation, this would change the resume template
+            console.log('Selected template:', this.value);
+        });
+
+        document.getElementById('cl-template-selector').addEventListener('change', function() {
+            // In a full implementation, this would change the cover letter template
+            console.log('Selected CL template:', this.value);
+        });
+
+        // Download buttons - these would generate PDFs in a full implementation
+        document.getElementById('download-resume').addEventListener('click', function() {
+            alert('In a full implementation, this would generate and download a PDF resume');
+            // This would use a library like jsPDF or html2pdf.js
+        });
+
+        document.getElementById('download-cover-letter').addEventListener('click', function() {
+            alert('In a full implementation, this would generate and download a PDF cover letter');
+            // This would use a library like jsPDF or html2pdf.js
+        });
+
+        // Initialize previews
+        updateResumePreview();
+        updateCoverLetterPreview();
+    </script>
+</body>
+</html>
